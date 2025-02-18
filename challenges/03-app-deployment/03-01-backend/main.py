@@ -16,7 +16,7 @@ from langchain_core.output_parsers import StrOutputParser
 logging.basicConfig(format='%(levelname)-10s%(message)s', level=logging.DEBUG)
 
 # Load environment variables
-if load_dotenv():
+if load_dotenv(dotenv_path="../../../.env"):
     logging.info("Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
     logging.info("Azure AI Search: " + os.getenv("AZURE_AI_SEARCH_SERVICE_NAME"))
 else: 
@@ -26,7 +26,7 @@ logging.info("Using Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"
 
 azure_openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
 azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-openai_api_version = os.getenv("OPENAI_API_VERSION")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
 azure_openai_completion_deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 azure_openai_embedding_deployment_name = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME")
 azure_ai_search_name = os.getenv("AZURE_AI_SEARCH_SERVICE_NAME")
@@ -36,7 +36,7 @@ azure_ai_search_api_key = os.getenv("AZURE_AI_SEARCH_API_KEY")
 
 azure_openai_embeddings = AzureOpenAIEmbeddings(
     azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
-    openai_api_version = os.getenv("OPENAI_EMBEDDING_API_VERSION"),
+    AZURE_OPENAI_API_VERSION = os.getenv("OPENAI_EMBEDDING_API_VERSION"),
     model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
 )
 
@@ -69,7 +69,7 @@ def execute_completion(request: CompletionRequest):
     # Create a prompt template with variables, note the curly braces
 
     system_message_template = """
-    You are a support agent helping provide answers to software developers questions.
+    You are a support agent helping provide answers to movies questions.
     Use the following context to answer questions, do not use any other data.
     If you need more information, ask the user for more details.
     If you don't know the answer, let the user know.

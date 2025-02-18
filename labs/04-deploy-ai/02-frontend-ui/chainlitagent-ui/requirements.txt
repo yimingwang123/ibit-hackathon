@@ -1,3 +1,0 @@
-chainlit==1.0.506
-fastapi==0.110.1
-python-dotenv==1.0.1
