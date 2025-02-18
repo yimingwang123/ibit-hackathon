@@ -1,4 +1,4 @@
-# KI-gestützter IT-Support Workshop
+# KI-gestützter IT-Support Hackathon
 
 ## Einleitung
 Dieser Workshop bietet eine praxisnahe Einführung in die Anwendung von Künstlicher Intelligenz (KI) zur Unterstützung des IT-Supports. Ziel ist es, zu verstehen, wie KI Prozesse automatisieren, den Support verbessern und Mitarbeitende entlasten kann. Durch praktische Übungen und Diskussionen werden die Grundlagen vermittelt und erste Schritte zur Implementierung erarbeitet.
