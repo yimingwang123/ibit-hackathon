@@ -56,38 +56,43 @@ def hybrid_search(query, search_client, embeddings_model):
     query_vector = embeddings_model.embed_query(query)
 
     vector_query = VectorizedQuery(
-    vector=query_vector,
-    k_nearest_neighbors=5,  # Anzahl der ähnlichen Treffer
-    fields="vector"  # Das Feld im Index, das Embeddings enthält
-)
+        vector=query_vector,
+        k_nearest_neighbors=5,  # Anzahl der ähnlichen Treffer
+        fields="vector"  # Das Feld im Index, das Embeddings enthält
+    )
 
     # Azure AI Search Abfrage 
     search_results = search_client.search(
-    search_text=query,  # Textbasierte Suche
-    vector_queries=[vector_query],  # Vektorbasierte Suche
-    query_type="semantic",  # Semantische Suche aktivieren
-    semantic_configuration_name="movies-semantic-config",
-    select=['id', 'original_language', 'original_title', 'popularity',
-            'release_date', 'vote_average', 'vote_count', 'genre',
-            'overview', 'revenue', 'runtime', 'tagline'],
-    top=5
-)
+        search_text=query,  # Textbasierte Suche
+        vector_queries=[vector_query],  # Vektorbasierte Suche
+        query_type="semantic",  # Semantische Suche aktivieren
+        semantic_configuration_name="movies-semantic-config",
+        select=['id', 'original_language', 'original_title', 'popularity',
+                'release_date', 'vote_average', 'vote_count', 'genre',
+                'overview', 'revenue', 'runtime', 'tagline'],
+        top=5
+    )
+
+    #  Ergebnisse sortieren nach kombiniertem Search Score
+    sorted_results = sorted(list(search_results), key=lambda x: x.get('@search.score', 0), reverse=True)
+
 
     #  Ergebnisse formatieren 
     context = []
-    for item in search_results:
+    for item in sorted_results:
         context.append(
-            f"-  🎬 Titel:  {item.get('original_title', 'N/A')}\n"
-            f"  -  🌍 Sprache:  {item.get('original_language', 'N/A')}\n"
-            f"  -  📅 Erscheinungsdatum:  {item.get('release_date', 'N/A')}\n"
-            f"  -  ⭐ Bewertung:  {item.get('vote_average', 'N/A')} ({item.get('vote_count', 'N/A')} Stimmen)\n"
-            f"  -  🔥 Beliebtheit:  {item.get('popularity', 'N/A')}\n"
-            f"  -  🎭 Genre:  {item.get('genre', 'N/A')}\n"
-            f"  -  🕒 Laufzeit:  {item.get('runtime', 'N/A')} Minuten\n"
-            f"  -  💰 Einnahmen:  {item.get('revenue', 'N/A')}\n"
-            f"  -  📝 Beschreibung:  {item.get('overview', 'Keine Beschreibung verfügbar')}\n"
-            f"  -  📢 Tagline:  {item.get('tagline', 'Keine Tagline')}\n"
-            f"  {'-'*50}"
+            f"  -  📊 Search Score: {item.get('@search.score', 'N/A')}\n"
+            f"  -  🎬 Titel: {item.get('original_title', 'N/A')}\n"
+            f"  -  🌍 Sprache: {item.get('original_language', 'N/A')}\n"
+            f"  -  📅 Erscheinungsdatum: {item.get('release_date', 'N/A')}\n"
+            f"  -  ⭐ Bewertung: {item.get('vote_average', 'N/A')} ({item.get('vote_count', 'N/A')} Stimmen)\n"
+            f"  -  🔥 Beliebtheit: {item.get('popularity', 'N/A')}\n"
+            f"  -  🎭 Genre: {item.get('genre', 'N/A')}\n"
+            f"  -  🕒 Laufzeit: {item.get('runtime', 'N/A')} Minuten\n"
+            f"  -  💰 Einnahmen: {item.get('revenue', 'N/A')}\n"
+            f"  -  📝 Beschreibung: {item.get('overview', 'Keine Beschreibung verfügbar')}\n"
+            f"  -  📢 Tagline: {item.get('tagline', 'Keine Tagline')}\n"
+            f"{'-'*50}"
         )
 
     return "\n".join(context)
@@ -152,5 +157,5 @@ if question:
     st.subheader("🎬 `Antwort:`")
     st.info(result)
     
-    st.subheader("📚 `Genutzte Filminformationen:`")
+    st.subheader("📚 `Relevante Filminformationen:`")
     st.markdown(film_kontext)
