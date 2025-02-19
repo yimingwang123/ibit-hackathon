@@ -30,7 +30,7 @@ def setup_azure_ai():
     # Embedding Model für Vektor-Suche
     embeddings_model = AzureOpenAIEmbeddings(
         azure_deployment=EMBEDDING_NAME,
-        chunk_size=1
+        chunk_size=1000
     )
 
     # Azure AI Search Client

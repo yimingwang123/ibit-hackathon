@@ -44,9 +44,10 @@ Dieser Workshop bietet eine praxisnahe Einführung in die Anwendung von Künstli
 
 ### 13:00 – 15:30  
 **Hands-on: Erste Schritte mit KI**  
-- **Challenge 1:** Umgebung einrichten – Wie funktioniert Azure AI Studio?  
-- **Challenge 2:** KI mit Dokumenten verbinden – Wie kann IBIT bestehende KBAs lesen und verstehen?  
-- **Challenge 3:** Praktische Übung – IBIT’s erste Schritte als Assistent  
+- [**Challenge 0:** Projektstarten in VS Code – Wie richtet man ein Projekt in Visual Studio Code ein?](challenges/00-option1-start-github-codespace)
+- [**Challenge 1:** Umgebung einrichten – Wie funktioniert Azure AI Studio?](challenges/01-config-azure-openai)
+- [**Challenge 2:** KI mit Dokumenten verbinden – Wie kann IBIT bestehende KBAs lesen und verstehen?](challenges/02-feed-your-documents)
+- [**Challenge 3:** Praktische Übung – IBIT’s erste Schritte als Assistent](challenges/03-app-deployment)
 
 ---
 
