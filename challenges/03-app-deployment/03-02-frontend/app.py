@@ -108,7 +108,7 @@ class StreamHandler(BaseCallbackHandler):
 
 #  Streamlit UI Setup 
 st.sidebar.image("movieagent.jpg")
-st.header("🎬 `Movie AI Agent`")
+st.header("🎬 `Movie KI Agent`")
 st.info("Ich bin ein KI-Agent, der Fragen zu Filmen beantworten kann.")
 
 # Initialisierung von Azure AI Search & OpenAI Embeddings
