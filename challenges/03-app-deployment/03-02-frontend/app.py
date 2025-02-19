@@ -10,7 +10,7 @@ from langchain.callbacks.base import BaseCallbackHandler
 from azure.search.documents.models import VectorizedQuery
 
 
-# 🌍 **Lade Umgebungsvariablen**
+# Lade Umgebungsvariablen
 load_dotenv(dotenv_path="../../../.env")
 
 # Azure AI Search & CosmosDB Config
@@ -23,8 +23,10 @@ AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
 DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 EMBEDDING_NAME = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME")
 
+print(AZURE_OPENAI_API_VERSION)
 
-# 🔹 **Set up Hybrid Search with Azure AI Search**
+
+# Set up Hybrid Search with Azure AI Search
 def setup_azure_ai():
     """Initialisiert Azure AI Search für Hybrid-Suche."""
     
@@ -43,18 +45,17 @@ def setup_azure_ai():
 
     # LLM (GPT) Initialisierung
     llm = AzureChatOpenAI(
-        AZURE_OPENAI_API_VERSION=AZURE_OPENAI_API_VERSION,
-        deployment_name=DEPLOYMENT_NAME
+        azure_deployment = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
     )
 
     return search_client, embeddings_model, llm
 
 
-# 🔹 **Azure AI Hybrid Search**
+# Azure AI Hybrid Search
 def hybrid_search(query, search_client, embeddings_model):
     """Führt eine Hybrid-Suche mit Azure AI Search durch (Keyword + Vector + Semantic)."""
     
-    # **Vektor-Erstellung für semantische Suche**
+    # Vektor-Erstellung für semantische Suche 
     query_vector = embeddings_model.embed_query(query)
 
     vector_query = VectorizedQuery(
@@ -63,7 +64,7 @@ def hybrid_search(query, search_client, embeddings_model):
     fields="vector"  # Das Feld im Index, das Embeddings enthält
 )
 
-    # **Azure AI Search Abfrage**
+    # Azure AI Search Abfrage 
     search_results = search_client.search(
     search_text=query,  # Textbasierte Suche
     vector_queries=[vector_query],  # Vektorbasierte Suche
@@ -75,20 +76,20 @@ def hybrid_search(query, search_client, embeddings_model):
     top=5
 )
 
-    # **Ergebnisse formatieren**
+    #  Ergebnisse formatieren 
     context = []
     for item in search_results:
         context.append(
-            f"- **🎬 Titel:** {item.get('original_title', 'N/A')}\n"
-            f"  - **🌍 Sprache:** {item.get('original_language', 'N/A')}\n"
-            f"  - **📅 Erscheinungsdatum:** {item.get('release_date', 'N/A')}\n"
-            f"  - **⭐ Bewertung:** {item.get('vote_average', 'N/A')} ({item.get('vote_count', 'N/A')} Stimmen)\n"
-            f"  - **🔥 Beliebtheit:** {item.get('popularity', 'N/A')}\n"
-            f"  - **🎭 Genre:** {item.get('genre', 'N/A')}\n"
-            f"  - **🕒 Laufzeit:** {item.get('runtime', 'N/A')} Minuten\n"
-            f"  - **💰 Einnahmen:** {item.get('revenue', 'N/A')}\n"
-            f"  - **📝 Beschreibung:** {item.get('overview', 'Keine Beschreibung verfügbar')}\n"
-            f"  - **📢 Tagline:** {item.get('tagline', 'Keine Tagline')}\n"
+            f"-  🎬 Titel:  {item.get('original_title', 'N/A')}\n"
+            f"  -  🌍 Sprache:  {item.get('original_language', 'N/A')}\n"
+            f"  -  📅 Erscheinungsdatum:  {item.get('release_date', 'N/A')}\n"
+            f"  -  ⭐ Bewertung:  {item.get('vote_average', 'N/A')} ({item.get('vote_count', 'N/A')} Stimmen)\n"
+            f"  -  🔥 Beliebtheit:  {item.get('popularity', 'N/A')}\n"
+            f"  -  🎭 Genre:  {item.get('genre', 'N/A')}\n"
+            f"  -  🕒 Laufzeit:  {item.get('runtime', 'N/A')} Minuten\n"
+            f"  -  💰 Einnahmen:  {item.get('revenue', 'N/A')}\n"
+            f"  -  📝 Beschreibung:  {item.get('overview', 'Keine Beschreibung verfügbar')}\n"
+            f"  -  📢 Tagline:  {item.get('tagline', 'Keine Tagline')}\n"
             f"  {'-'*50}"
         )
 
@@ -96,19 +97,19 @@ def hybrid_search(query, search_client, embeddings_model):
 
 
 
-# 🔹 **Streamlit Callback Handlers**
+#  Streamlit Callback Handlers 
 class StreamHandler(BaseCallbackHandler):
     """Verarbeitet LLM-Streaming-Ausgabe für die UI."""
     def __init__(self, container, initial_text=""):
         self.container = container
         self.text = initial_text
 
-    def on_llm_new_token(self, token: str, **kwargs):
+    def on_llm_new_token(self, token: str,  kwargs):
         self.text += token
         self.container.info(self.text)
 
 
-# 🔹 **Streamlit UI Setup**
+#  Streamlit UI Setup 
 st.sidebar.image("movieagent.jpg")
 st.header("🎬 `Movie AI Agent`")
 st.info("Ich bin ein KI-Agent, der Fragen zu Filmen beantworten kann.")
@@ -121,14 +122,14 @@ search_client = st.session_state.search_client
 embeddings_model = st.session_state.embeddings_model
 llm = st.session_state.llm
 
-# **Benutzerabfrage**
+#  Benutzerabfrage 
 question = st.text_input("🎤 `Stelle eine Frage zu Filmen:`")
 
 if question:
-    # **Hybrid AI Search starten**
+    #  Hybrid AI Search starten 
     film_kontext = hybrid_search(question, search_client, embeddings_model)
 
-    # **Prompt Template für LLM**
+    #  Prompt Template für LLM 
     prompt_template = PromptTemplate(
         input_variables=["frage", "film_kontext"],
         template="""Du bist ein KI-System, das auf Basis der folgenden Filmdaten antworten soll.
@@ -141,16 +142,16 @@ if question:
         """
     )
 
-    # **Pipeline definieren**
+    #  Pipeline definieren 
     chain = LLMChain(llm=llm, prompt=prompt_template)
 
-    # **Antwort generieren**
+    #  Antwort generieren 
     answer = st.empty()
     stream_handler = StreamHandler(answer, initial_text="`💡 Antwort:`\n\n")
     
     result = chain.run({"frage": question, "film_kontext": film_kontext}, callbacks=[stream_handler])
 
-    # **Ausgabe formatieren**
+    #  Ausgabe formatieren 
     st.subheader("🎬 `Antwort:`")
     st.info(result)
     
