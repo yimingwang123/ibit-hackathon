@@ -58,10 +58,7 @@
 		},
         "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
             "version": "latest"
-        },
-		"ghcr.io/devcontainers/features/azure-dev-cli:1": {
-			"version": "latest"
-		}
+        }
 	}
 
 }
