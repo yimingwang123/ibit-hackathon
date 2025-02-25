@@ -1,5 +1,6 @@
 import os
 import logging
+import uvicorn
 from langchain_openai import AzureOpenAIEmbeddings, AzureChatOpenAI
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -16,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 logging.basicConfig(format='%(levelname)-10s%(message)s', level=logging.DEBUG)
 
 # Load environment variables
-if load_dotenv(dotenv_path="../../../.env"):
+if load_dotenv():
     logging.info("Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
     logging.info("Azure AI Search: " + os.getenv("AZURE_AI_SEARCH_SERVICE_NAME"))
 else: 
@@ -36,7 +37,6 @@ azure_ai_search_api_key = os.getenv("AZURE_AI_SEARCH_API_KEY")
 
 azure_openai_embeddings = AzureOpenAIEmbeddings(
     azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
-    AZURE_OPENAI_API_VERSION = os.getenv("OPENAI_EMBEDDING_API_VERSION"),
     model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
 )
 
@@ -104,14 +104,20 @@ def execute_completion(request: CompletionRequest):
         semantic_configuration_name="movies-semantic-config",
         include_total_count=True,
         vector_queries=[vector],
-        select=["title","genre","overview","tagline","release_date","popularity","vote_average","vote_count","runtime","revenue","original_language"],
-        top=5
+        select=["id", "original_language", "original_title", "popularity",
+                "release_date", "vote_average", "vote_count", "genre",
+                "overview", "revenue", "runtime", "tagline"], top=5
     ))
 
 
 
     output_parser = StrOutputParser()
     chain = prompt | azure_openai | output_parser
-    response = chain.invoke({"context": results, "question": request.Question, })
+    response = chain.invoke({"context": results, "question": [HumanMessage(content=request.Question)]})
     logging.info("Response from LLM: " + response)
     return CompletionResponse(completion = response)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+# To run this script, make sure that you are in the directory where the script is located and run: python main.py
