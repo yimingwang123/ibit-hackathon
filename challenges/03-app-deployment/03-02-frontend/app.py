@@ -8,6 +8,7 @@ from azure.search.documents import SearchClient
 from azure.core.credentials import AzureKeyCredential
 from langchain.callbacks.base import BaseCallbackHandler
 from azure.search.documents.models import VectorizedQuery
+from flask import Flask, request, jsonify
 
 
 # Lade Umgebungsvariablen
