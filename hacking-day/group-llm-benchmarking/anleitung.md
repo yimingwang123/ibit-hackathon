@@ -8,7 +8,7 @@ Wir orientieren uns zunächst an den Grundlagen der [Azure AI Search RAG Lösung
 
 ## Zielsetzung
 
-- Einführung in die Benchmarking-Prozesse für LLMs in Azure AI Foundry.
+- Einarbeitung in die Benchmarking-Prozesse für LLMs in Azure AI Foundry.
 - Vergleich von fünf ausgewählten Modellen für eine KBA RAG Anwendung.
 - Bereitstellung eines Beispielcodes zur Durchführung eines Benchmarks.
 - Empfehlung des besten Modells basierend auf den Testergebnissen.
