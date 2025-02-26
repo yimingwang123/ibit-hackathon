@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Zugriff auf freigegebenen Ordner verweigert,Protokolle prüfen und Software neu installieren,"Blauer Bildschirm, Start, Absturz",Julia Becker
+Langsame Internetverbindung,Passwort über AD oder Self-Service-Portal zurücksetzen,"Zugriff, Ordner, Berechtigungen",Thomas Richter
+Keine Verbindung zum VPN,Protokolle prüfen und Software neu installieren,"E-Mail, Synchronisation, Outlook",Thomas Richter
+Blauer Bildschirm beim Start,Netzwerktreiber aktualisieren und erneut verbinden,"Internet, Geschwindigkeit, Verbindung",Sophie Keller
+Windows-Passwort vergessen,Netzwerktreiber aktualisieren und erneut verbinden,"Zugriff, Ordner, Berechtigungen",Sabine Schulz
+Fehler bei der Softwareinstallation,VPN-Einstellungen zurücksetzen und neu starten,"VPN, Netzwerk, Verbindung",Thomas Richter
+Blauer Bildschirm beim Start,Protokolle prüfen und Software neu installieren,"Antivirus, Anwendung, Blockierung",Thomas Richter
+Blauer Bildschirm beim Start,Windows-Diagnose ausführen und Treiber aktualisieren,"VPN, Netzwerk, Verbindung",Stefan Lehmann
+E-Mails werden nicht synchronisiert,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"Windows, Passwort, Zurücksetzen",Katrin Hoffmann
+Fehler bei der Softwareinstallation,Windows-Diagnose ausführen und Treiber aktualisieren,"Blauer Bildschirm, Start, Absturz",Stefan Lehmann

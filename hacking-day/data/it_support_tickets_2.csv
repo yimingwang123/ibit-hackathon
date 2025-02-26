@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Zugriff auf freigegebenen Ordner verweigert,VPN-Einstellungen zurücksetzen und neu starten,"Blauer Bildschirm, Start, Absturz",Sophie Keller
+Zugriff auf freigegebenen Ordner verweigert,Netzwerktreiber aktualisieren und erneut verbinden,"Windows, Passwort, Zurücksetzen",Markus Weber
+Langsame Internetverbindung,Netzwerktreiber aktualisieren und erneut verbinden,"Drucker, Offline, Fehler",Michael Braun
+WLAN trennt sich häufig,Passwort über AD oder Self-Service-Portal zurücksetzen,"Drucker, Offline, Fehler",Markus Weber
+E-Mails werden nicht synchronisiert,VPN-Einstellungen zurücksetzen und neu starten,"Software, Installation, Fehler",Thomas Richter
+Blauer Bildschirm beim Start,Anwendung in Antivirus-Einstellungen freigeben,"E-Mail, Synchronisation, Outlook",Hans Meier
+Windows-Passwort vergessen,Protokolle prüfen und Software neu installieren,"WLAN, Netzwerk, Trennung",Sabine Schulz
+Windows-Passwort vergessen,VPN-Einstellungen zurücksetzen und neu starten,"E-Mail, Synchronisation, Outlook",Sabine Schulz
+Fehler bei der Softwareinstallation,Router überprüfen und Gerät neu starten,"Software, Installation, Fehler",Sophie Keller
+Fehler bei der Softwareinstallation,Windows-Diagnose ausführen und Treiber aktualisieren,"Windows, Passwort, Zurücksetzen",Katrin Hoffmann

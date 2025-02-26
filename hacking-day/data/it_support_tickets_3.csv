@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Drucker reagiert nicht,Drucker neu starten und Verbindungen prüfen,"Internet, Geschwindigkeit, Verbindung",Sabine Schulz
+Blauer Bildschirm beim Start,Protokolle prüfen und Software neu installieren,"Zugriff, Ordner, Berechtigungen",Julia Becker
+Langsame Internetverbindung,Ordnerberechtigungen prüfen und Zugriff anfordern,"WLAN, Netzwerk, Trennung",Sabine Schulz
+Langsame Internetverbindung,Anwendung in Antivirus-Einstellungen freigeben,"Software, Installation, Fehler",Petra Wagner
+E-Mails werden nicht synchronisiert,Windows-Diagnose ausführen und Treiber aktualisieren,"E-Mail, Synchronisation, Outlook",Hans Meier
+Keine Verbindung zum VPN,VPN-Einstellungen zurücksetzen und neu starten,"Drucker, Offline, Fehler",Michael Braun
+Windows-Passwort vergessen,VPN-Einstellungen zurücksetzen und neu starten,"VPN, Netzwerk, Verbindung",Sophie Keller
+Antivirus blockiert Anwendung,Anwendung in Antivirus-Einstellungen freigeben,"Internet, Geschwindigkeit, Verbindung",Sophie Keller
+Fehler bei der Softwareinstallation,Netzwerktreiber aktualisieren und erneut verbinden,"Antivirus, Anwendung, Blockierung",Markus Weber
+Fehler bei der Softwareinstallation,Passwort über AD oder Self-Service-Portal zurücksetzen,"Windows, Passwort, Zurücksetzen",Hans Meier

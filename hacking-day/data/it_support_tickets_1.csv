@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Blauer Bildschirm beim Start,Drucker neu starten und Verbindungen prüfen,"Internet, Geschwindigkeit, Verbindung",Julia Becker
+Fehler bei der Softwareinstallation,Drucker neu starten und Verbindungen prüfen,"Drucker, Offline, Fehler",Stefan Lehmann
+Drucker reagiert nicht,Passwort über AD oder Self-Service-Portal zurücksetzen,"WLAN, Netzwerk, Trennung",Michael Braun
+Langsame Internetverbindung,Windows-Diagnose ausführen und Treiber aktualisieren,"Windows, Passwort, Zurücksetzen",Stefan Lehmann
+Keine Verbindung zum VPN,Passwort über AD oder Self-Service-Portal zurücksetzen,"Blauer Bildschirm, Start, Absturz",Julia Becker
+WLAN trennt sich häufig,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"WLAN, Netzwerk, Trennung",Katrin Hoffmann
+Keine Verbindung zum VPN,Drucker neu starten und Verbindungen prüfen,"Antivirus, Anwendung, Blockierung",Katrin Hoffmann
+Langsame Internetverbindung,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"Drucker, Offline, Fehler",Markus Weber
+Drucker reagiert nicht,Protokolle prüfen und Software neu installieren,"Windows, Passwort, Zurücksetzen",Stefan Lehmann
+Windows-Passwort vergessen,Passwort über AD oder Self-Service-Portal zurücksetzen,"Drucker, Offline, Fehler",Thomas Richter

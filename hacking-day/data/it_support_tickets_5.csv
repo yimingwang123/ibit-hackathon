@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+WLAN trennt sich häufig,Netzwerktreiber aktualisieren und erneut verbinden,"VPN, Netzwerk, Verbindung",Hans Meier
+Blauer Bildschirm beim Start,VPN-Einstellungen zurücksetzen und neu starten,"Drucker, Offline, Fehler",Michael Braun
+Zugriff auf freigegebenen Ordner verweigert,VPN-Einstellungen zurücksetzen und neu starten,"Zugriff, Ordner, Berechtigungen",Petra Wagner
+Keine Verbindung zum VPN,Netzwerktreiber aktualisieren und erneut verbinden,"Blauer Bildschirm, Start, Absturz",Sophie Keller
+Keine Verbindung zum VPN,Protokolle prüfen und Software neu installieren,"Drucker, Offline, Fehler",Julia Becker
+Antivirus blockiert Anwendung,Drucker neu starten und Verbindungen prüfen,"Software, Installation, Fehler",Hans Meier
+Keine Verbindung zum VPN,Router überprüfen und Gerät neu starten,"Windows, Passwort, Zurücksetzen",Katrin Hoffmann
+Antivirus blockiert Anwendung,Drucker neu starten und Verbindungen prüfen,"Software, Installation, Fehler",Sophie Keller
+Zugriff auf freigegebenen Ordner verweigert,Windows-Diagnose ausführen und Treiber aktualisieren,"Windows, Passwort, Zurücksetzen",Sabine Schulz
+E-Mails werden nicht synchronisiert,Protokolle prüfen und Software neu installieren,"Windows, Passwort, Zurücksetzen",Stefan Lehmann

@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+WLAN trennt sich häufig,VPN-Einstellungen zurücksetzen und neu starten,"Drucker, Offline, Fehler",Katrin Hoffmann
+Zugriff auf freigegebenen Ordner verweigert,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"E-Mail, Synchronisation, Outlook",Thomas Richter
+Drucker reagiert nicht,Drucker neu starten und Verbindungen prüfen,"Windows, Passwort, Zurücksetzen",Thomas Richter
+Antivirus blockiert Anwendung,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"Blauer Bildschirm, Start, Absturz",Stefan Lehmann
+Windows-Passwort vergessen,Passwort über AD oder Self-Service-Portal zurücksetzen,"Zugriff, Ordner, Berechtigungen",Julia Becker
+Blauer Bildschirm beim Start,Netzwerktreiber aktualisieren und erneut verbinden,"E-Mail, Synchronisation, Outlook",Markus Weber
+Keine Verbindung zum VPN,Router überprüfen und Gerät neu starten,"Internet, Geschwindigkeit, Verbindung",Michael Braun
+E-Mails werden nicht synchronisiert,Protokolle prüfen und Software neu installieren,"Software, Installation, Fehler",Sophie Keller
+Drucker reagiert nicht,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"Software, Installation, Fehler",Katrin Hoffmann
+E-Mails werden nicht synchronisiert,Router überprüfen und Gerät neu starten,"VPN, Netzwerk, Verbindung",Sabine Schulz

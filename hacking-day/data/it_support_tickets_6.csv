@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Windows-Passwort vergessen,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"E-Mail, Synchronisation, Outlook",Thomas Richter
+Zugriff auf freigegebenen Ordner verweigert,Anwendung in Antivirus-Einstellungen freigeben,"Zugriff, Ordner, Berechtigungen",Thomas Richter
+Blauer Bildschirm beim Start,Anwendung in Antivirus-Einstellungen freigeben,"Software, Installation, Fehler",Julia Becker
+WLAN trennt sich häufig,VPN-Einstellungen zurücksetzen und neu starten,"Software, Installation, Fehler",Julia Becker
+Windows-Passwort vergessen,Windows-Diagnose ausführen und Treiber aktualisieren,"VPN, Netzwerk, Verbindung",Petra Wagner
+Keine Verbindung zum VPN,Drucker neu starten und Verbindungen prüfen,"E-Mail, Synchronisation, Outlook",Thomas Richter
+Antivirus blockiert Anwendung,Drucker neu starten und Verbindungen prüfen,"Blauer Bildschirm, Start, Absturz",Julia Becker
+Keine Verbindung zum VPN,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"WLAN, Netzwerk, Trennung",Stefan Lehmann
+E-Mails werden nicht synchronisiert,Ordnerberechtigungen prüfen und Zugriff anfordern,"WLAN, Netzwerk, Trennung",Katrin Hoffmann
+Langsame Internetverbindung,E-Mail-Einstellungen neu konfigurieren und Gerät neu starten,"Drucker, Offline, Fehler",Hans Meier

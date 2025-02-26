@@ -1,0 +1,11 @@
+Problem,Lösung,Schlagwörter,Verantwortliche Person
+Zugriff auf freigegebenen Ordner verweigert,Windows-Diagnose ausführen und Treiber aktualisieren,"E-Mail, Synchronisation, Outlook",Thomas Richter
+E-Mails werden nicht synchronisiert,Windows-Diagnose ausführen und Treiber aktualisieren,"E-Mail, Synchronisation, Outlook",Markus Weber
+Keine Verbindung zum VPN,Drucker neu starten und Verbindungen prüfen,"Zugriff, Ordner, Berechtigungen",Markus Weber
+Windows-Passwort vergessen,VPN-Einstellungen zurücksetzen und neu starten,"Antivirus, Anwendung, Blockierung",Julia Becker
+Fehler bei der Softwareinstallation,Netzwerktreiber aktualisieren und erneut verbinden,"Software, Installation, Fehler",Sabine Schulz
+Keine Verbindung zum VPN,Windows-Diagnose ausführen und Treiber aktualisieren,"Antivirus, Anwendung, Blockierung",Julia Becker
+Antivirus blockiert Anwendung,Passwort über AD oder Self-Service-Portal zurücksetzen,"Software, Installation, Fehler",Katrin Hoffmann
+Antivirus blockiert Anwendung,Anwendung in Antivirus-Einstellungen freigeben,"Antivirus, Anwendung, Blockierung",Hans Meier
+Blauer Bildschirm beim Start,Anwendung in Antivirus-Einstellungen freigeben,"VPN, Netzwerk, Verbindung",Petra Wagner
+Keine Verbindung zum VPN,Windows-Diagnose ausführen und Treiber aktualisieren,"Internet, Geschwindigkeit, Verbindung",Sabine Schulz
